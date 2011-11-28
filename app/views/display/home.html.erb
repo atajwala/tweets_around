@@ -1,0 +1,40 @@
+<div id="social">
+  <iframe src="http://www.facebook.com/plugins/like.php?
+  href=<%= "http://mail2share.com" %>;
+  layout=button_count&amp;action=like&amp;colorscheme=light&amp; scrolling="no" frameborder="0" 
+  style="border:none; overflow:hidden; width:58px; height:25px;" allowTransparency="true">
+  </iframe>
+
+  <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+   <a href="http://twitter.com/share" class="twitter-share-button"
+        data-url="<%= "http://mail2share.com/" %>"
+        data-via="Tweets Around"
+        data-text="I am digging Tweets-Around!"
+        data-related="anywhere:"
+        data-count="none">Tweet</a>
+</div>
+
+<div id="locate" align="center">
+<%= form_tag 'display/results', :id => 'findtweets', :remote => true do %>
+<%= select_tag 'criteria', options_for_select(CRITERIA), :class => 'criteria' %> <%= text_field_tag "addr", nil, :class => 'addr' %>
+  &nbsp&nbsp|&nbsp&nbsp<label>Locate</label>
+  &nbsp<%= select_tag 'count', options_for_select(NUMTWEETS) %>
+  &nbsp&nbsp<%= submit_tag "Tweets Around!", :id => 'search', :style => 'cursor:pointer' %>  
+<% end %> 
+</div>
+<div id="bird">
+	<a><img src="<%= image_path('twitter-bird-gif1.gif') %>" width="80" height="60" /></a>
+</div>
+<div id="busy">
+	<img src="<%= image_path('busy.gif') %>" width="43" height="43"/>
+</div>
+<div class="notice">
+</div>
+<div id="circle1" class="circle">
+</div>
+<div id="circle2" class="circle">
+</div>
+<div id="circle3" class="circle">
+</div>
+<div id="circle4" class="circle">
+</div>

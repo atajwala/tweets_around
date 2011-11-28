@@ -1,0 +1,9 @@
+cleanup();
+
+<% @mytweets.each do |twt| %>
+  serializeTweet(<%= twt.to_json.html_safe %>);
+<% end %>
+
+drop();
+
+$("#busy").css("visibility","hidden");
