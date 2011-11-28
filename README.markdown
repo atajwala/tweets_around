@@ -10,9 +10,9 @@ TweetsAround is a Rails application that demonstrates mashing of MongoDB, Twitte
 
 # Details
 
-** A mash-up app that clubs Twitter API, MongoDB & Google Maps API using Rails.
+## A mash-up app that clubs Twitter API, MongoDB & Google Maps API using Rails.
 
-*** Using the Twitter Streaming API (https://dev.twitter.com/docs/streaming-api) it creates an app that lists Tweets with geo location specified by the user.
+### Using the Twitter Streaming API (https://dev.twitter.com/docs/streaming-api) it creates an app that lists Tweets with geo location specified by the user.
 
 - Creates a rake task that consumes the Twitter Streaming API.
 - Inserts Tweets into a Capped MongoDB "tweets" collection (http://www.mongodb.org/display/DOCS/Capped+Collections) that is limited to 100000 entries. 
@@ -23,7 +23,7 @@ TweetsAround is a Rails application that demonstrates mashing of MongoDB, Twitte
 - Includes some unit tests using RSpec.
 
 
-*** Requirements:
+### Requirements
 - Rails 3.x
 - Ruby 1.9.x
 - Mongoid (gem)
