@@ -16,7 +16,7 @@
 
 <div id="locate" align="center">
 <%= form_tag 'display/results', :id => 'findtweets', :remote => true do %>
-<%= select_tag 'criteria', options_for_select(CRITERIA), :class => 'criteria' %> <%= text_field_tag "addr", nil, :class => 'addr' %>
+<%= select_tag 'criteria', options_for_select(CRITERIA), :class => 'criteria' %> <%= text_field_tag "addr", nil, :class => 'addr', :value => '(make a selection then enter search text here)' %>
   &nbsp&nbsp|&nbsp&nbsp<label>Locate</label>
   &nbsp<%= select_tag 'count', options_for_select(NUMTWEETS) %>
   &nbsp&nbsp<%= submit_tag "Tweets Around!", :id => 'search', :style => 'cursor:pointer' %>  

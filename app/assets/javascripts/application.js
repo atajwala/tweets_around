@@ -38,7 +38,11 @@ function welcomeChirp(){
 	stopChirp();
 	$(".notice").css("display","block");
 	welcomeTimer = setTimeout(function() { $(".notice").css("display","none").fadeOut(2000) }, 15000);
-	$(".notice").append("Welcome to <b>Tweets Around</b>!</br></br>TweetsAround allows you to search for recent tweets near any geographical point. Like us on Facebook or Tweet about us if you dig this site. </br></br> This application was developed by <a href=\"http://aslamtajwala.com\"><b>Aslam Tajwala</b></a>");
+	$(".notice").append("Welcome to <b>TweetsAround</b>!</br></br><em>TweetsAround</em> \
+	  is a geo-location-based tool that allows you to search for recent tweets near any \
+	  geographical point. <i>If you liked this application, tweet about it or like it on \
+	  Facebook.</i> </br></br> This application was developed by \
+	  <a href=\"http://aslamtajwala.com\"><b>Aslam Tajwala</b></a>");
 	makeBubbles(7000);
 }
 
@@ -133,5 +137,13 @@ $(document).ready(function(){
 	$.post(this.action, $(this).serialize(), null, "script");
 	return false;
   });
+ 
+  $("#addr").blur(function() {
+	if($(this).value == "") {
+		$(this).val($(this).data("(make a selection then enter search text here)"));
+	}
+  });
+
+  $("#addr").focus(function() {this.value = ""});
 });
 

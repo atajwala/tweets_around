@@ -3,16 +3,13 @@
 <head>
   <title>Tweets Around</title>
   <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag 'jquery', "mapper", "prettyDate", "application" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
 <meta name="keywords" content="TweetsAround, Rails, Application, RoR, Mashup, MongoDB, Twitter API, Google Maps API">
 <meta name="description" content="TweetsAround is a Rails application that demonstrates mashing of MongoDB, Twitter API and Google Maps API">
 
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="assets/mapper.js" type="text/javascript"></script>
-<script src="assets/prettyDate.js" type="text/javascript"></script>
 </head>
 
 <body onload="initialize()">

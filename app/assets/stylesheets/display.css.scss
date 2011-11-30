@@ -75,7 +75,11 @@ input {
 }
 
 input.addr {
-  width: 350px;
+  width: 400px;
+}
+
+#addr {
+  color: #362F30;
 }
 
 select.criteria {
@@ -106,7 +110,7 @@ select.criteria {
 .error, .alert, .notice, .success, .info {
 	position: fixed;
 	width: 30%;
-	height: 23%;
+	height: 25%;
 	top: 220px;
     left: 715px;
 	z-index: 99;
