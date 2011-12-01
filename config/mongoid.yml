@@ -14,9 +14,13 @@ test:
 production:
   host: <%= ENV['MONGOHQ_URL'] %>
   port: <%= ENV['MONGOID_PORT'] %>
-  username: <%= ENV['MONGOID_USERNAME'] %>
-  password: <%= ENV['MONGOID_PASSWORD'] %>
-  database: <%= ENV['MONGOID_DATABASE'] %>
+  username: "heroku"
+  password: "heroku"
+  database: "app1884419"
+  #username: <%= ENV['MONGOID_USERNAME'] %>
+  #password: <%= ENV['MONGOID_PASSWORD'] %>
+  #database: <%= ENV['MONGOID_DATABASE'] %>
+  
   #allow_dynamic_fields: true
   # slaves:
   #   - host: slave1.local
