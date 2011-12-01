@@ -13,9 +13,9 @@ test:
 # set these environment variables on your prod server
 production:
   host: <%= ENV['MONGOHQ_URL'] %>
-  port: <%= ENV['MONGOID_PORT'] %>
+  port: 10042
   username: heroku
-  password: heroku
+  password: a76cea2d8a54af60e98b4f10bfcabc8e
   database: app1884419
   #username: <%= ENV['MONGOID_USERNAME'] %>
   #password: <%= ENV['MONGOID_PASSWORD'] %>
