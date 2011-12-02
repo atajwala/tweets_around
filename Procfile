@@ -1,0 +1,1 @@
+worker:  bundle exec rake get_stream
