@@ -57,9 +57,10 @@
 	});
 	markers.push(marker);
 	
-	var prtyDate = prettyDate(tweets[iterator].created_at);	
+	var prtyDate = prettyDate(tweets[iterator].created_at);
+	var tweetLink = prettyTweet(tweets[iterator].text);	
 	var infowindow = new google.maps.InfoWindow({
-	  content: "<u>"+"<img src=\""+tweets[iterator].user.profile_image_url_https+"\" />  "+"<b>"+tweets[iterator].user.screen_name + "</b>" + " says: </u> <br />" + "<i>"+tweets[iterator].text+"</i>"+"<br />"+"("+prtyDate+")",
+	  content: "<u>"+"<img src=\""+tweets[iterator].user.profile_image_url_https+"\" />  "+"<b>"+tweets[iterator].user.screen_name + "</b>" + " says: </u> <br />" + "<i>"+tweetLink+"</i>"+"<br />"+"("+prtyDate+")",
 	  title: "Tweet",
 	  size: new google.maps.Size(50,30)
 	});
@@ -85,6 +86,15 @@
   function serializeTweet(tweet) {
 	coordinates.push(new google.maps.LatLng(tweet.geo.coordinates[0], tweet.geo.coordinates[1]));
     tweets.push(tweet);
+  }
+
+  function prettyTweet(tweet) {
+	var urlRegex = /https*\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/gi;
+	var url = tweet.match(urlRegex);
+	if (url == null) { return tweet; } 
+	url[0] = "<a href=\""+url[0]+"\" target=\"_blank\">"+url[0]+"</a>";
+	tweet = tweet.replace(urlRegex, url[0]);
+	return tweet;
   }
 
 (function($) {
