@@ -78,13 +78,13 @@ function validateInput() {
 function validateAddress() {
 	var address = $("#addr").val();	
 	
-	if (address == "") {
+	if ((address == "") || (address == "(make a selection then enter search text here)")) {
 		startChirp("<b>CHIRP!</br>Please enter a valid: </br> Address, Landmark, \
 		  Country, City, State, or Zip.</b></br>" + 
 		  "<p>Example:</br> => Milpitas, CA (address)</br> => Eiffel Tower \
 		  (landmark)</br> => 91210 (zip code)</p>", false);		  
 		return false;
-	}
+	} 
 	return true;
 }
 
@@ -145,5 +145,6 @@ $(document).ready(function(){
   });
 
   $("#addr").focus(function() {this.value = ""});
+  $("#addr").focus(function() {stopChirp();});
 });
 

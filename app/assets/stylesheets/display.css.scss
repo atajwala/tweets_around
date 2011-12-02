@@ -109,10 +109,10 @@ select.criteria {
 /* error UI */
 .error, .alert, .notice, .success, .info {
 	position: fixed;
-	width: 30%;
+	width: 400px;
 	height: 25%;
 	top: 220px;
-    left: 715px;
+    right: 225px;
 	z-index: 99;
 	padding:0.9em;margin-bottom:1em;border:3px solid #ddd;
 	-webkit-border-radius: 25px;  
