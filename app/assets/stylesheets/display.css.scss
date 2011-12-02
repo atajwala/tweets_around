@@ -109,14 +109,15 @@ select.criteria {
 /* error UI */
 .error, .alert, .notice, .success, .info {
 	position: fixed;
-	width: 400px;
-	height: 25%;
+	width: 425px;
+	height: 225px;
 	top: 220px;
     right: 225px;
 	z-index: 99;
 	padding:0.9em;margin-bottom:1em;border:3px solid #ddd;
 	-webkit-border-radius: 25px;  
 	-moz-border-radius: 25px;
+	border-radius: 25px;
 	}
 .error, .alert {background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4;}
 .notice {background: #C9DFAF;font-size: 16px;border-color:white;display:none;}

@@ -17,6 +17,7 @@ jQuery.ajaxSetup({
 function clearTimer(){
 	if(welcomeTimer) {
 		clearTimeout(welcomeTimer);
+		welcomeTimer = null;
 	}
 }
 
@@ -37,13 +38,13 @@ function makeBubbles(time){
 function welcomeChirp(){
 	stopChirp();
 	$(".notice").css("display","block");
-	welcomeTimer = setTimeout(function() { $(".notice").css("display","none").fadeOut(2000) }, 15000);
+	welcomeTimer = setTimeout(function() { $(".notice").css("display","none").fadeOut(2000) }, 12000);
 	$(".notice").append("Welcome to <b>TweetsAround</b>!</br></br><em>TweetsAround</em> \
 	  is a geo-location-based tool that allows you to search for recent tweets near any \
-	  geographical point. <i>If you liked this application, tweet about it or like it on \
+	  geographical point. </br></br> <i>If you liked this application, tweet about it or like it on \
 	  Facebook.</i> </br></br> This application was developed by \
 	  <a href=\"http://aslamtajwala.com\"><b>Aslam Tajwala</b></a>");
-	makeBubbles(7000);
+	makeBubbles(6000);
 }
 
 function startChirp(msg, check) {
@@ -123,7 +124,17 @@ function validateLongLat() {
 }
 
 $(document).ready(function(){
-  $("#bird").click(function(){ clearTimer(); welcomeChirp(); });
+	
+  $("#bird").click(function(){ 
+	if(welcomeTimer) {
+	  clearTimer();
+	  stopChirp();
+	} else {
+	  clearTimer(); 
+	  welcomeChirp();	
+	} 
+  });
+
   setTimeout(function() { welcomeChirp(); }, 3000);
   $("#findtweets").submit(function(){
 	var retVal = false; 
