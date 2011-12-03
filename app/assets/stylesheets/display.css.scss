@@ -106,6 +106,24 @@ select.criteria {
 	z-index: 99;
 }
 
+.msgbox {
+  font-family: 'lucida sans unicode', 'lucida grande', sans-serif;
+  font-size: 15px;
+  font-color: #222;
+  line-height: 2em;
+  padding: 2px;
+  margin: 0px;
+  border: 1px solid #D8D8D8;
+  -webkit-border-radius: 20px;  
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.msgbox h2 {
+  padding: 0px;
+  margin: 0px;
+}
+
 /* error UI */
 .error, .alert, .notice, .success, .info {
 	position: fixed;
