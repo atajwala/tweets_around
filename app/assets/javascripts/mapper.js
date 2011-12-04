@@ -66,7 +66,7 @@
 	                 content: hipTweet
 	                ,disableAutoPan: false
 	                ,maxWidth: 0
-	                ,pixelOffset: new google.maps.Size(-2.5*tweetLength, -145)
+	                ,pixelOffset: new google.maps.Size(-2.5*tweetLength, -147)
 	                ,zIndex: null
 	                ,boxStyle: { 
 	                  background: "#C9DFAF",
@@ -117,8 +117,8 @@
 
   function prettyLink(tweet) {
 	var urlRegex = /https*\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/gi;
-	var hastagRegex = /\#(\S*)/gi;
-	var nameRegex = /\@(\S*)/gi;
+	var hastagRegex = /\#[^\s \W][\S]+/gi;
+	var nameRegex = /\@[^\s \W][\S]+/gi;
 	
 	tweet = matchUrl(tweet, urlRegex);
 	tweet = matchHashtag(tweet, hastagRegex);
