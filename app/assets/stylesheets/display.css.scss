@@ -2,9 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html { height: 100% }
-body { height: 100%; margin: 0; padding: 0 }
-#map_canvas { height: 100% }
+html { 
+  overflow: hidden;
+  height: 100% 
+}
+
+body { 
+  height: 100%; 
+  margin: 0; 
+  padding: 0; 
+}
+
+#map_canvas { 
+  top: 1px;
+  left: 0px;
+  width: 101%;
+  height: 88%;
+}
 
 .box_disabled {disabled:true} 
 .box_enabled {disabled:false}
@@ -23,9 +37,9 @@ body { height: 100%; margin: 0; padding: 0 }
 }
 
 #locate {
-  width: 100%;
-  float: left;
-  margin-bottom: 1px;
+  top: 0px;
+  left: 0px;
+  width: 99%;
   height: 5%;
 }
 
@@ -40,9 +54,11 @@ select {
 }
 
 #about {
+  left: 0px;
   font-size: 15px;
   padding: 1px;
-  margin-top: 4px;
+  margin: 5px 0px;
+  width: 101%;
   height: 3%;
 }
 
@@ -95,6 +111,7 @@ select.criteria {
   position: absolute;
   top: 15px;
   left: 10px;
+  z-index: 99;
 }
 
 .circle {

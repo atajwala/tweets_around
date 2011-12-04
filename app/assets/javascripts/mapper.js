@@ -187,6 +187,7 @@ jQuery.fn.drawCircle = function(args) {
 
 	$(this).css('-moz-border-radius', radius);
 	$(this).css('-webkit-border-radius',radius);
+	$(this).css('border-radius',radius);
   });
 }
 })(jQuery);
