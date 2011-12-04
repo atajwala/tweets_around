@@ -1,6 +1,6 @@
 class Tweet
   include Mongoid::Document
-  store_in :tweets, capped: true, size: 25000000
+  store_in :tweets, capped: true, size: 250000000
  	embeds_one :geo
 
 	index(
