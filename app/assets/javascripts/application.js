@@ -129,11 +129,9 @@ $(document).ready(function(){
 	if(welcomeTimer) {
 	  clearTimer();
 	  stopChirp();
-	  alert("timer ON");
 	} else {
 	  clearTimer(); 
 	  welcomeChirp();	
-	  alert("timer OFF");
 	} 
   });
 

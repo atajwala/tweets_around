@@ -107,21 +107,40 @@ select.criteria {
 }
 
 .msgbox {
-  font-family: 'lucida sans unicode', 'lucida grande', sans-serif;
+  font-family: 'arial', sans-serif;
   font-size: 15px;
-  font-color: #222;
-  line-height: 2em;
-  padding: 2px;
-  margin: 0px;
-  border: 1px solid #D8D8D8;
-  -webkit-border-radius: 20px;  
-  -moz-border-radius: 20px;
-  border-radius: 20px;
+  line-height: 1.2em;
+  border: 3px solid white;
+  color: #222;
+  padding: 6px 6px 8px 6px;
 }
 
-.msgbox h2 {
-  padding: 0px;
-  margin: 0px;
+#divpic {
+  float: left;
+  margin: 6px 10px 6px 12px;
+}
+
+.msgbox twtname {
+  font-size: 16px;
+  font-weight: bold;
+  color: green;
+}
+
+.msgbox twtname a {
+  color: green;
+  text-decoration: none;
+}
+
+.msgbox twtname a:hover {
+  text-decoration: underline;
+}
+
+.msgbox twtmsg {
+}
+
+.msgbox twttime {
+  font-size: 11px;
+  color: #8A1119;
 }
 
 /* error UI */
