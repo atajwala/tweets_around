@@ -30,8 +30,8 @@ var date = new Date(time);
 var diff = ((current_date_full - date.getTime()) / 1000);
 
 if ($.browser.msie) {
-var dates = time.replace(/(-|T|:|\.)/gi, ",").substr(0, 23).split(",");
-date = new Date(Date.UTC(dates[0], dates[1]-1, dates[2],dates[3],dates[4],dates[5],dates[6])).getTime();
+// added by me(Aslam) to make IE behave with twitter Date format.
+date = new Date(time.replace(/^\w+ (\w+) (\d+) ([\d:]+) \+0000 (\d+)$/, "$1 $2 $4 $3 UTC"));
 diff = ((current_date_full - date) / 1000);
 };
 

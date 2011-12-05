@@ -23,7 +23,7 @@
 
   function cleanup(){
 	if (markers) {	 
-	  for (i in markers) {
+	  for (i=0; i < markers.length; i++) {
 	    markers[i].setMap(null);	
 	  }
 	  iterator = 0; 
