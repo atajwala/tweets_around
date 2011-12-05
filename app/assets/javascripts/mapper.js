@@ -1,6 +1,7 @@
   var coordinates = [];
   var tweets = [];
   var markers = [];
+  var infowindows = [];
   var iterator = 0;
   var map, usa, center;
   var SLOW = 200;
@@ -22,14 +23,16 @@
   }
 
   function cleanup(){
-	if (markers) {	 
+	if (markers || infowindows) {	 
 	  for (i=0; i < markers.length; i++) {
-	    markers[i].setMap(null);	
+	    markers[i].setMap(null);
+	    infowindows[i].setMap(null);	
 	  }
 	  iterator = 0; 
 	  tweets = [];
 	  coordinates = [];
 	  markers = [];
+	  infowindows = [];
 	}
   }
 
@@ -80,9 +83,8 @@
 	                ,pane: "floatPane"
 	                ,enableEventPropagation: false
 	        };
-
-	        var infowindow = new InfoBox(myOptions);
-	    
+	var infowindow = new InfoBox(myOptions);
+	infowindows.push(infowindow);    
 	
 /*	
 	var infowindow = new google.maps.InfoWindow({
@@ -117,8 +119,8 @@
 
   function prettyLink(tweet) {
 	var urlRegex = /https*\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/gi;
-	var hastagRegex = /\#[^\s \W][\S]+/gi;
-	var nameRegex = /\@[^\s \W][\S]+/gi;
+	var hastagRegex = /\#[a-zA-Z0-9_]+/gi;
+	var nameRegex = /\@[a-zA-Z0-9_]+/gi;
 	
 	tweet = matchUrl(tweet, urlRegex);
 	tweet = matchHashtag(tweet, hastagRegex);
