@@ -60,12 +60,14 @@ select {
 }
 
 #about {
-  left: 0px;
+  position: absolute;
+  bottom: 0px;
   font-size: 15px;
   padding: 1px;
   margin: 5px 0px;
   width: 101%;
   height: 23px;
+  z-index: 99;
 }
 
 #bird, #busy {
