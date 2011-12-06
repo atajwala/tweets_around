@@ -30,30 +30,27 @@ function clearTimer(){
 	}
 }
 
-function makeBubbles(time){
-    if (time == 0) {
-	  $("#circle1").drawCircle({cirsize: 60, radius: 30, distance: 150});
-	  $("#circle2").drawCircle({cirsize: 40, radius: 25, distance: 100});
-	  $("#circle3").drawCircle({cirsize: 20, radius: 15, distance: 70});
-	  $("#circle4").drawCircle({cirsize: 10, radius: 10, distance: 50});
-	  return;
-    }
-	$("#circle1").drawCircle({cirsize: 60, radius: 30, distance: 150}).fadeOut(time);
-	$("#circle2").drawCircle({cirsize: 40, radius: 25, distance: 100}).fadeOut(time);
-	$("#circle3").drawCircle({cirsize: 20, radius: 15, distance: 70}).fadeOut(time);
-	$("#circle4").drawCircle({cirsize: 10, radius: 10, distance: 50}).fadeOut(time);
+function makeBubbles(){
+  $("#circle4").drawCircle({cirsize: 60, radius: 30, distance_x: 210, distance_y: 180});
+  $("#circle3").drawCircle({cirsize: 40, radius: 25, distance_x: 155, distance_y: 125});
+  $("#circle2").drawCircle({cirsize: 20, radius: 15, distance_x: 120, distance_y: 85});
+  $("#circle1").drawCircle({cirsize: 10, radius: 10, distance_x: 93, distance_y: 57});
+  $("#circle0").drawCircle({cirsize: 4, radius: 4, distance_x: 72, distance_y: 37});
 }
 
 function welcomeChirp(){
 	stopChirp();
 	$(".notice").css("display","block");
-	welcomeTimer = setTimeout(function() { $(".notice").css("display","none").fadeOut(2000) }, 12000);
+	welcomeTimer = setTimeout(function() { 
+	  stopChirp();
+	  welcomeTimer = null; 
+	}, 12000);
 	$(".notice").append("Welcome to <b>TweetsAround</b>!</br></br><em>TweetsAround</em> \
 	  is a geo-location-based tool that allows you to search for recent tweets near any \
 	  geographical point. </br></br> <i>If you liked this application, tweet about it or like it on \
 	  Facebook.</i> </br></br> This application was developed by \
 	  <a href=\"http://aslamtajwala.com\"><b>Aslam Tajwala</b></a>");
-	makeBubbles(6000);
+	makeBubbles();
 }
 
 function startChirp(msg, check) {
@@ -63,12 +60,13 @@ function startChirp(msg, check) {
 	stopChirp();
 	$(".notice").css("display","block");
 	$(".notice").append(msg + ((check)?confused:""));
-	makeBubbles(0);
+	makeBubbles();
 }
 
 function stopChirp() {
 	$(".notice").css("display","none");
 	$(".notice").empty();
+	$("#circle0").css("display","none");
 	$("#circle1").css("display","none");
 	$("#circle2").css("display","none");
 	$("#circle3").css("display","none");
@@ -89,7 +87,7 @@ function validateAddress() {
 	var address = $("#addr").val();	
 	
 	if ((address == "") || (address == "(make a selection then enter search text here)")) {
-		startChirp("<b>CHIRP!</br>Please enter a valid: </br> Address, Landmark, \
+		startChirp("<b>CHIRP!</br></br>Please enter a valid: </br> Address, Landmark, \
 		  Country, City, State, or Zip.</b></br>" + 
 		  "<p>Example:</br> => Milpitas, CA (address)</br> => Eiffel Tower \
 		  (landmark)</br> => 91210 (zip code)</p>", false);		  
@@ -105,25 +103,25 @@ function validateLongLat() {
 	var lat  = latlong[1];
 	
 	if (long == "" || lat == "") {
-		startChirp("<b>CHIRP!</br>Please enter Longitude/Latitude values first.</b></br>"
+		startChirp("<b>CHIRP!</br></br>Please enter Longitude/Latitude values first.</b></br>"
 		+ "<p>(Example: for the city of Milpitas, CA, USA:</br> \
 		  Longitude = <b>-121.898065</b> and Latitude = <b>37.432539</b>)</p>", true);
 		return false;
 	}	
 	if (isNaN(long) || isNaN(lat)) {
-		startChirp("<b>CHIRP!</br>Longitude/Latitude values have to be numbers.</b></br>"
+		startChirp("<b>CHIRP!</br></br>Longitude/Latitude values have to be numbers.</b></br>"
 		+ "<p>(Example: for the city of Milpitas, CA, USA:</br> \
 		  Longitude = <b>-121.898065</b> and Latitude = <b>37.432539</b>)<p>", true);
 		return false;
 	}	
 	if((long < -180 || long > 180) || (lat < -90 || lat > 90)) {
 	  if((lat < -90 || lat > 90)){
-		startChirp("<b>CHIRP!</br>Latitude value ranges from -90 to 90.</b></br>"
+		startChirp("<b>CHIRP!</br></br>Latitude value ranges from -90 to 90.</b></br>"
 		+ "<p>(Example: for the city of Milpitas, CA, USA:</br> \
 		  Latitude = <b>37.432539</b>)</p>", true);
 	  }
 	  if((long < -180 || long > 180)){
-		startChirp("<b>CHIRP!</br>Longitude value ranges from -180 to 180.</b></br>"
+		startChirp("<b>CHIRP!</br></br>Longitude value ranges from -180 to 180.</b></br>"
 		+ "<p>(Example: for the city of Milpitas, CA, USA:</br> \
 		  Longitude = <b>-121.898065</b>)</p>", true);
 	  }

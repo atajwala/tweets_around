@@ -177,14 +177,15 @@ jQuery.fn.drawCircle = function(args) {
   return this.each(function() {
     var size = args.cirsize;
 	var radius = args.radius;
-	var distance = args.distance;
+	var distance_x = args.distance_x;
+	var distance_y = args.distance_y;
 	
 	$(this).css({
 		display: 'block',
 		width: size + 'px',
 		height: size + 'px',
-		top: distance + 'px',
-		right: distance + 'px',
+		top: distance_y + 'px',
+		right: distance_x + 'px',
 	});
 
 	$(this).css('-moz-border-radius', radius);
