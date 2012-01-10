@@ -3,11 +3,11 @@ class Tweet
   store_in :tweets, capped: true, size: 250000000
  	embeds_one :geo
 
-	index(
-	  	[
-					[ "geo.coordinates", Mongo::GEO2D ]
-			], background: true
-	)
+  index(
+      [
+          [ "geo.coordinates", Mongo::GEO2D ]
+      ], background: true
+  )
 end
 
 class Geo
@@ -22,11 +22,11 @@ class Tweet
   store_in :tweets, capped: true, size: 250000000
  	embeds_one :geo
 
-	index(
-	  	[
-					[ :coordinates, Mongo::GEO2D ]
-			], background: true
-	)
+  index(
+      [
+          [ :coordinates, Mongo::GEO2D ]
+      ], background: true
+  )
 end
 
 class Geo
