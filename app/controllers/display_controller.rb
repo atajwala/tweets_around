@@ -4,14 +4,14 @@ class DisplayController < ApplicationController
   end
 
 =begin
-		  db.tweets.ensureIndex( 
-		    { "geo.coordinates" : "2d" } 
-			)
-			db.tweets.find( 
-			  { "geo.coordinates" : 
-			    => { $near: [ 40.24997883, -122.8188132 ] } } 
-			).count()
-			rake db:mongoid:create_indexes
+  db.tweets.ensureIndex( 
+    { "geo.coordinates" : "2d" } 
+  )
+  db.tweets.find( 
+    { "geo.coordinates" : 
+    => { $near: [ 40.24997883, -122.8188132 ] } } 
+  ).count()
+  rake db:mongoid:create_indexes
 =end
 
   def results
@@ -36,13 +36,13 @@ class DisplayController < ApplicationController
                   ).limit(params[:count].to_i)
     end
 		
-	  respond_to do |format|
-		  format.html
-		  format.js 
-		  format.json{
-			  render :json => @mytweets.to_json
+    respond_to do |format|
+      format.html
+      format.js 
+      format.json{
+        render :json => @mytweets.to_json
       }
-		end
+    end
   end
 
 end
