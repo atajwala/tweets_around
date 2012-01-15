@@ -13,6 +13,13 @@ gem 'tweetstream'
 gem 'yajl-ruby'
 gem 'geokit'
 
+group :test, :development do
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'webrat'
+  gem 'mongoid-rspec'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

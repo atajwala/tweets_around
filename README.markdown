@@ -22,7 +22,7 @@ This application is built on top of an array of other applications - a mashup in
 - Creates a page where the user is able to enter an Address (or Long/Lat coordinates) to see the latest tweets near that location. 
 - Uses Fibers and EventMachine to speed up inserts into MongoDB.
 - Uses Google Maps to visualize location of Tweets.
-- Includes some unit tests using RSpec (coming soon).
+- Includes some tests using RSpec (incomplete).
 
 > #### Model 
 Uses mongodb as it's backend. Mongoid is a nice gem that wraps the mongodb syntax with ruby-syntax (*rubyists smiling*). 
