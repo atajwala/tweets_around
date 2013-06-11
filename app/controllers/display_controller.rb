@@ -16,7 +16,7 @@ class DisplayController < ApplicationController
 
   def results
     if(params[:criteria] == CRITERIA[0])
-      result = Geokit::Geocoders::GoogleGeocoder.geocode(params[:addr])
+      result = Geokit::Geocoders::GoogleGeocoder3.geocode(params[:addr])
 
       if(result.success == false)
         render :file => 'invalid_address.js.erb' and return		
